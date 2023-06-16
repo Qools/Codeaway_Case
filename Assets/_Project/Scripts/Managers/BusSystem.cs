@@ -10,4 +10,7 @@ public static class BusSystem
 
     public static Action OnNewLevelLoad;
     public static void CallNewLevelLoad() => OnNewLevelLoad?.Invoke();
+
+    public static Action OnEnemyDestroyed;
+    public static void CallEnemyDestroyed() => OnEnemyDestroyed?.Invoke();
 }
