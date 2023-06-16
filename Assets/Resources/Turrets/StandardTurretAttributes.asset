@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10961c09c7c0034dbbae2bb08c0b761, type: 3}
   m_Name: StandardTurretAttributes
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 7789367825634404170, guid: 1770975a21bb2174ab8df2636c083aac, type: 3}
-  projectile: {fileID: 3100241993246935191, guid: 17c2b59d6a88fae4db4874a7e68debda, type: 3}
+  turretPrefab: {fileID: 3660710843006356496, guid: 3bfd0b32d6e442742a04495ccfa5dc2e, type: 3}
+  projectile: {fileID: 8192894275593471444, guid: 17db49b0aba8495458f7ccaaa3d7ac26, type: 3}
   turretIcon: {fileID: 21300000, guid: 0522dcf1879b7fa4da094098e8990c1c, type: 3}
   price: 100
   range: 15
-  timeToRotate: 0.25
+  turretRotationSpeed: 25
   fireRate: 1

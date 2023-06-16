@@ -12,6 +12,6 @@ public class TurretAttributes : ScriptableObject
 
     public int price;
     public float range = 15f;
-    public float timeToRotate = 0.25f;
+    public float turretRotationSpeed = 0.25f;
     public float fireRate = 1f;
 }

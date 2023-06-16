@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
+using UnityEditor;
 
 public class Turret : MonoBehaviour
 {
@@ -87,12 +87,23 @@ public class Turret : MonoBehaviour
 
     private void LookAtTarget()
     {
-        partToRotate.DOLookAt(target.position, turretAttributes.timeToRotate, AxisConstraint.Y);
+        //partToRotate.DOLookAt(target.position, turretAttributes.timeToRotate, AxisConstraint.None, Vector3.right);
+
+        float angle = Mathf.Atan2(
+            target.position.y - transform.position.y, 
+            target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
+
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
+        partToRotate.rotation = Quaternion.RotateTowards(
+            partToRotate.rotation, 
+            targetRotation, 
+            turretAttributes.turretRotationSpeed * Time.deltaTime);
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, turretAttributes.range);
+        Handles.color = Color.red;
+        Handles.DrawWireDisc(transform.position, Vector3.forward, turretAttributes.range);
     }
 }

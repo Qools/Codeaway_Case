@@ -37,9 +37,13 @@ public class Projectile : MonoBehaviour
 
     private void HitTarget()
     {
-        GameObject particleEffect = Instantiate(projectileAttributes.particleEffect, transform.position, transform.rotation);
+        if (projectileAttributes.particleEffect != null)
+        {
+            GameObject particleEffect = Instantiate(projectileAttributes.particleEffect, transform.position, transform.rotation);
 
-        Destroy(particleEffect, 2f);
+            Destroy(particleEffect, 2f);
+        }
+
 
         if (projectileAttributes.explosionRadius > 0f)
         {
