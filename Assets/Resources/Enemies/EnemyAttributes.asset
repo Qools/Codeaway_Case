@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf25cfc91707a7542ba4df2ccb54b330, type: 3}
   m_Name: EnemyAttributes
   m_EditorClassIdentifier: 
+  healthPoints: 100
   speed: 10
   minDistanceToWaypoint: 0.1
