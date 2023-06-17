@@ -48,10 +48,10 @@ public class Node : MonoBehaviour
             return;
         }
 
-        if (!BuildManager.Instance.CanBuild)
-        {
-            return;
-        }
+        //if (!BuildManager.Instance.CanBuild)
+        //{
+        //    return;
+        //}
 
         if (turret != null)
         {

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: ArrowAttributes
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 5721332022407194390, guid: 8148b78987513ab49ba1f9b278ae26a4, type: 3}
-  speed: 80
+  speed: 20
+  explosionRadius: 0
+  projectileRotationSpeed: 120

@@ -9,10 +9,13 @@ public class Enemy : MonoBehaviour
     private Transform target;
     private int waypointIndex = 0;
     private bool isReachedEnd = false;
+    private int enemyHealthPoints;
 
     private void Start()
     {
         target = Waypoints.waypoints[0];
+
+        enemyHealthPoints = enemyAttributes.healthPoints;
     }
 
     private void Update()
@@ -62,6 +65,21 @@ public class Enemy : MonoBehaviour
         }
 
         target = Waypoints.waypoints[waypointIndex];
+    }
+
+    public void TakeDamage(int _damage)
+    {
+        enemyHealthPoints -= _damage;
+
+        if (enemyHealthPoints <= 0)
+        {
+            EnemyDeath();
+        }
+    }
+
+    public void EnemyDeath()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDestroy()

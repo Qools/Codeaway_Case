@@ -87,8 +87,6 @@ public class Turret : MonoBehaviour
 
     private void LookAtTarget()
     {
-        //partToRotate.DOLookAt(target.position, turretAttributes.timeToRotate, AxisConstraint.None, Vector3.right);
-
         float angle = Mathf.Atan2(
             target.position.y - transform.position.y, 
             target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;

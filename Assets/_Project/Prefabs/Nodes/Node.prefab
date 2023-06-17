@@ -124,6 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3730d2037a1804b40ab523a3b4639a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionOffset: {x: 0, y: 0.5, z: 0}
+  positionOffset: {x: 0, y: 1, z: 0}
   highLightColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
   turret: {fileID: 0}

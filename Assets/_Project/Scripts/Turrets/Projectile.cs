@@ -17,6 +17,7 @@ public class Projectile : MonoBehaviour
         }
 
         Movement();
+        LookAtTarget();
     }
 
     private void Movement()
@@ -32,7 +33,20 @@ public class Projectile : MonoBehaviour
 
 
         transform.Translate(direction.normalized * distanceThisFrame, Space.World);
-        transform.LookAt(target);
+    }
+
+    private void LookAtTarget()
+    {
+        float angle = Mathf.Atan2(
+           target.position.y - transform.position.y,
+           target.position.x - transform.position.x) * Mathf.Rad2Deg - 90f;
+
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation,
+            targetRotation,
+            projectileAttributes.projectileRotationSpeed * Time.deltaTime);
     }
 
     private void HitTarget()
@@ -72,7 +86,10 @@ public class Projectile : MonoBehaviour
 
     private void DamageTarget(Transform enemy)
     {
-        Destroy(enemy.gameObject);
+        if (enemy.TryGetComponent(out Enemy _enemy))
+        {
+            _enemy.TakeDamage(projectileAttributes.damage);
+        }
     }
 
     public void SetTarget(Transform _target)

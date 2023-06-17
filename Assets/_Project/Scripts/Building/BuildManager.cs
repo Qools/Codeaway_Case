@@ -6,7 +6,7 @@ public class BuildManager : Singleton<BuildManager>
 {
     private TurretAttributes turretToBuild;
 
-    public GameObject standardTurretPrefab;
+    public TurretAttributes standardTurretPrefab;
 
     public void Init()
     {
@@ -26,15 +26,31 @@ public class BuildManager : Singleton<BuildManager>
 
     public void BuildTurretOn(Node node)
     {
-        if (PlayerStats.Money < turretToBuild.price)
+        if (turretToBuild == null)
         {
-            return;
+            if (PlayerStats.Money < standardTurretPrefab.price)
+            {
+                return;
+            }
+
+            PlayerStats.Money -= standardTurretPrefab.price;
+
+            GameObject turret = Instantiate(standardTurretPrefab.turretPrefab, node.GetOffsetPosition(), Quaternion.identity);
+            node.turret = turret;
         }
 
-        PlayerStats.Money -= turretToBuild.price;
+        else
+        {
+            if (PlayerStats.Money < turretToBuild.price)
+            {
+                return;
+            }
 
-        GameObject turret = Instantiate(turretToBuild.turretPrefab, node.GetOffsetPosition(), Quaternion.identity);
-        node.turret = turret;
+            PlayerStats.Money -= turretToBuild.price;
+
+            GameObject turret = Instantiate(turretToBuild.turretPrefab, node.GetOffsetPosition(), Quaternion.identity);
+            node.turret = turret;
+        }
     }
 
     public void SetTurretToBuild(TurretAttributes _turret)

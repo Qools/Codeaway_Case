@@ -16,6 +16,6 @@ MonoBehaviour:
   projectile: {fileID: 8192894275593471444, guid: 17db49b0aba8495458f7ccaaa3d7ac26, type: 3}
   turretIcon: {fileID: 21300000, guid: 0522dcf1879b7fa4da094098e8990c1c, type: 3}
   price: 100
-  range: 15
-  turretRotationSpeed: 25
+  range: 4
+  turretRotationSpeed: 120
   fireRate: 1

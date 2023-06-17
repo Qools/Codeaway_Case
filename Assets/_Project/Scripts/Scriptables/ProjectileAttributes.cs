@@ -7,6 +7,8 @@ public class ProjectileAttributes : ScriptableObject
 {
     public GameObject particleEffect;
 
+    public int damage;
     public float speed = 80f;
     public float explosionRadius = 0f;
+    public float projectileRotationSpeed = 60f;
 }
