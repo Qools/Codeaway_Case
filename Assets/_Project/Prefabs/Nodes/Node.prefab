@@ -126,4 +126,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionOffset: {x: 0, y: 1, z: 0}
   highLightColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  notEnoughMoneyColor: {r: 0.754717, g: 0.13883947, b: 0.13883947, a: 1}
   turret: {fileID: 0}

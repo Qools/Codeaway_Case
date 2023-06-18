@@ -15,3 +15,4 @@ MonoBehaviour:
   healthPoints: 100
   speed: 10
   minDistanceToWaypoint: 0.1
+  killReward: 25

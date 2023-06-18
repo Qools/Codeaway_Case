@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6c0f011667086c4e93a424f0d8f020c, type: 3}
   m_Name: LevelList
   m_EditorClassIdentifier: 
-  all: []
+  all:
+  - TestScene

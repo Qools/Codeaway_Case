@@ -2,26 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildManager : Singleton<BuildManager>
+public class BuildManager : MonoBehaviour
 {
     private TurretAttributes turretToBuild;
 
     public TurretAttributes standardTurretPrefab;
 
-    public void Init()
-    {
-        SetStatus(Status.ready);
-    }
+    public static BuildManager Instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        Init();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+        turretToBuild = standardTurretPrefab;
     }
 
     public bool CanBuild
     {
         get { return turretToBuild != null; }
+    }
+
+    public bool HasMoney
+    {
+        get { return PlayerStats.Money >= turretToBuild.price; }
     }
 
     public void BuildTurretOn(Node node)

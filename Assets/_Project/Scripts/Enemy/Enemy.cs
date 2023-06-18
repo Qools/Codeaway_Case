@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     private bool isReachedEnd = false;
     private int enemyHealthPoints;
 
+    private bool isDying = false;
     private void Start()
     {
         target = Waypoints.waypoints[0];
@@ -59,7 +60,7 @@ public class Enemy : MonoBehaviour
         {
             isReachedEnd = true;
 
-            Destroy(gameObject);
+            EndPath();
 
             return;
         }
@@ -69,17 +70,38 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int _damage)
     {
+        if (isDying)
+        {
+            return;
+        }
+
         enemyHealthPoints -= _damage;
 
         if (enemyHealthPoints <= 0)
         {
+            isDying = true;
+
             EnemyDeath();
         }
     }
 
+    private void EndPath()
+    {
+        PlayerStats.Lives--;
+        BusSystem.CallLivesReduced(PlayerStats.Lives);
+        Destroy(gameObject);
+    }
+
     public void EnemyDeath()
     {
+        AddRewardMoney();
         Destroy(gameObject);
+    }
+
+    private void AddRewardMoney()
+    {
+        PlayerStats.Money += enemyAttributes.killReward;
+        Debug.Log(PlayerStats.Money);
     }
 
     private void OnDestroy()

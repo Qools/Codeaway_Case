@@ -8,4 +8,5 @@ public class EnemyAttributes : ScriptableObject
     public int healthPoints;
     public float speed;
     public float minDistanceToWaypoint;
+    public int killReward;
 }

@@ -9,6 +9,7 @@ public class Node : MonoBehaviour
 
     [SerializeField] private Vector3 positionOffset = new Vector3(0f, 0.5f, 0f);
     [SerializeField] private Color highLightColor;
+    [SerializeField] private Color notEnoughMoneyColor;
     private Color startColor;
 
     public GameObject turret;
@@ -33,7 +34,15 @@ public class Node : MonoBehaviour
             return;
         }
 
-        nodeRenderer.material.color = highLightColor;
+        if (BuildManager.Instance.HasMoney)
+        {
+            nodeRenderer.material.color = highLightColor;
+        }
+        else
+        {
+            nodeRenderer.material.color = notEnoughMoneyColor;
+        }
+        
     }
 
     private void OnMouseExit()

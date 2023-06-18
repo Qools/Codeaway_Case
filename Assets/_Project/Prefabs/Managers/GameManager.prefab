@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
-  levelList: {fileID: 11400000, guid: f23703a9547c53c4e984bdbfc42ce36b, type: 2}
-  currentLevel: {fileID: 0}
+  levelList: {fileID: 11400000, guid: caa9f6afd69aafd4a82d865ce3a51b98, type: 2}
+  currentLevel: 
   isGameStarted: 0

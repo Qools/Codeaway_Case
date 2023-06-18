@@ -13,8 +13,9 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
-    
 
+    public static float countdown;
+    
     private int waveIndex = 1;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
@@ -23,7 +24,8 @@ public class WaveSpawner : MonoBehaviour
 
     private void Start()
     {
-       DOVirtual.DelayedCall(timeBetweenWaves,()=> StartWave());
+        countdown = timeBetweenWaves;
+        DOVirtual.DelayedCall(timeBetweenWaves,()=> StartWave());
     }
 
     // Update is called once per frame
@@ -31,6 +33,12 @@ public class WaveSpawner : MonoBehaviour
     {
         if (!isSpawning)
         {
+            if (countdown > 0f)
+            {
+                countdown -= Time.deltaTime;
+                countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+            }
+
             return;
         }
 
@@ -68,6 +76,8 @@ public class WaveSpawner : MonoBehaviour
     {
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
+
+        countdown = timeBetweenWaves;
     }
 
     private void EndWave()
@@ -75,6 +85,8 @@ public class WaveSpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         waveIndex++;
+
+        PlayerStats.Rounds++;
 
         DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
     }

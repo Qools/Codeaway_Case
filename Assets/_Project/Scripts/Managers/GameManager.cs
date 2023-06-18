@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
     public LevelList levelList;
 
     [HideInInspector]
-    public GameObject currentLevel;
+    public string currentLevel;
 
     public bool isGameStarted = false;
 
@@ -21,9 +22,11 @@ public class GameManager : Singleton<GameManager>
 
         yield return StartCoroutine(WaitInit(Init));
 
-        LoadLevel(DataManager.Instance.GetLevel());
+        //LoadLevel(DataManager.Instance.GetLevel());
 
         MenuManager.Instance.loadingScreen.SetActive(false);
+
+        MenuManager.Instance.SwitchPanel<StartMenu>();
     }
 
     private void Update()
@@ -73,16 +76,11 @@ public class GameManager : Singleton<GameManager>
 
     public void LoadLevel(int _level)
     {
-        if (currentLevel != null)
-        {
-            Destroy(currentLevel.gameObject);
-        }
+        currentLevel = levelList.LoopLevelsByIndex(_level);
 
-        currentLevel = Instantiate(levelList.LoopLevelsByIndex(_level));
+        SceneManager.LoadScene(currentLevel);
 
-        BusSystem.CallNewLevelLoad();
-
-        MenuManager.Instance.SwitchPanel<StartMenu>();     
+        MenuManager.Instance.CloseAllPanels();
     }
 
     public void Win()
