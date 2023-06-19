@@ -13,4 +13,9 @@ public class TurretBlueprint : ScriptableObject
 
     public int price;
     public int upgradePrice;
+
+    public int GetSellAmount()
+    {
+        return price / 2;
+    }
 }

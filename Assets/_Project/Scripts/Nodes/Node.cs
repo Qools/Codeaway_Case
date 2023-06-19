@@ -31,11 +31,6 @@ public class Node : MonoBehaviour
             return;
         }
 
-        if (!GameManager.Instance.isGameStarted)
-        {
-            return;
-        }
-
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -65,11 +60,6 @@ public class Node : MonoBehaviour
     private void OnMouseDown()
     {
         if (GameManager.Instance.isGameOver)
-        {
-            return;
-        }
-
-        if (!GameManager.Instance.isGameStarted)
         {
             return;
         }
@@ -124,6 +114,14 @@ public class Node : MonoBehaviour
         turret = newTurret;
 
         isUpgraded = true;
+    }
+
+    public void SellTurret()
+    {
+        PlayerStats.Money += turretBlueprint.GetSellAmount();
+
+        Destroy(turret);
+        turretBlueprint = null;
     }
 
     public Vector3 GetOffsetPosition()

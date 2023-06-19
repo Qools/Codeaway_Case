@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour
 {
     public EnemyAttributes enemyAttributes;
+    [SerializeField] private Image healthBar;
 
     private int enemyHealthPoints;
 
@@ -22,6 +25,8 @@ public class Enemy : MonoBehaviour
         }
 
         enemyHealthPoints -= _damage;
+
+        healthBar.DOFillAmount(enemyHealthPoints / enemyAttributes.healthPoints, 0.5f);
 
         if (enemyHealthPoints <= 0)
         {

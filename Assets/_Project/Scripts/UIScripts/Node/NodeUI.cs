@@ -9,7 +9,6 @@ public class NodeUI : MonoBehaviour
     [SerializeField] private GameObject ui;
 
     [SerializeField] private Button upgradeButton;
-    [SerializeField] private Button sellButton;
 
     [SerializeField] private TextMeshProUGUI upgradeButtonText;
     [SerializeField] private TextMeshProUGUI sellButtonText;
@@ -23,14 +22,23 @@ public class NodeUI : MonoBehaviour
         transform.position = target.GetOffsetPosition();
 
         EnableUpradeButton(target.isUpgraded);
+        
         SetUpgradeButtonText();
+        SetSellButtonText();
 
         EnableUI();
     }
 
-    public void UpgradeButton()
+    public void UpgradeTurretButton()
     {
         target.UpgradeTurret();
+
+        BuildManager.Instance.DeselectNode();
+    }
+
+    public void SellTurretButton()
+    {
+        target.SellTurret();
 
         BuildManager.Instance.DeselectNode();
     }
@@ -57,6 +65,11 @@ public class NodeUI : MonoBehaviour
             upgradeButtonText.text = "<b>NO UPGRADE</b>";
         }
 
+    }
+
+    private void SetSellButtonText()
+    {
+        sellButtonText.text = "<b>SELL</b>" + "<br>" + "$" + target.turretBlueprint.GetSellAmount().ToString();
     }
 
     private void EnableUpradeButton(bool enable)

@@ -200,7 +200,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8803096348818692011}
         m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
-        m_MethodName: UpgradeButton
+        m_MethodName: UpgradeTurretButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -257,7 +257,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui: {fileID: 8803096349358638845}
   upgradeButton: {fileID: 8803096348662057730}
-  sellButton: {fileID: 8803096349718440940}
   upgradeButtonText: {fileID: 8803096349568104767}
   sellButtonText: {fileID: 8803096350018663137}
 --- !u!1 &8803096349169264869
@@ -535,7 +534,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>UPGRADE</b>
 
-    $100'
+    $9999'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 359e640d73fb0714fa76c3934d566aaa, type: 2}
   m_sharedMaterial: {fileID: -6881238731951343409, guid: 359e640d73fb0714fa76c3934d566aaa, type: 2}
@@ -725,7 +724,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8803096349718440943}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8803096348818692011}
+        m_TargetAssemblyTypeName: NodeUI, Assembly-CSharp
+        m_MethodName: SellTurretButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8803096350018663143
 GameObject:
   m_ObjectHideFlags: 0
@@ -794,7 +805,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '<b>SELL</B>
 
-    $50'
+    $9999'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 359e640d73fb0714fa76c3934d566aaa, type: 2}
   m_sharedMaterial: {fileID: -6881238731951343409, guid: 359e640d73fb0714fa76c3934d566aaa, type: 2}
