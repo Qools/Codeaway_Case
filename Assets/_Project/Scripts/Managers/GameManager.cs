@@ -11,6 +11,7 @@ public class GameManager : Singleton<GameManager>
     public string currentLevel;
 
     public bool isGameStarted = false;
+    public bool isGameOver = false;
 
     private IEnumerator Start()
     {
@@ -21,8 +22,6 @@ public class GameManager : Singleton<GameManager>
         yield return StartCoroutine(GameController.Instance.WaitInit(GameController.Instance.Init));
 
         yield return StartCoroutine(WaitInit(Init));
-
-        //LoadLevel(DataManager.Instance.GetLevel());
 
         MenuManager.Instance.loadingScreen.SetActive(false);
 
@@ -57,6 +56,13 @@ public class GameManager : Singleton<GameManager>
     private void OnGameStarted()
     {
         isGameStarted = true;
+        isGameOver = false;
+    }
+
+    public void GameOver()
+    {
+        isGameStarted = false;
+        isGameOver = true;
     }
 
     private void GameResult(GameResult gameResult)
@@ -66,6 +72,11 @@ public class GameManager : Singleton<GameManager>
         if (gameResult == global::GameResult.Win)
         {
             Win();
+        }
+
+        else
+        {
+            GameOver();
         }
     }
 
@@ -81,10 +92,13 @@ public class GameManager : Singleton<GameManager>
         SceneManager.LoadScene(currentLevel);
 
         MenuManager.Instance.CloseAllPanels();
+
+        BusSystem.CallNewLevelLoad();
     }
 
     public void Win()
     {
         DataManager.Instance.SetLevel(DataManager.Instance.GetLevel() + 1);
     }
+
 }

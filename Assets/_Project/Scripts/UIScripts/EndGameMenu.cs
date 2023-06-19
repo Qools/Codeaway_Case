@@ -29,6 +29,8 @@ public class EndGameMenu : UIPanel
 
     private void OnGameEnd(GameResult gameResult)
     {
+        MenuManager.Instance.SwitchPanel<EndGameMenu>();
+
         retryButton.gameObject.SetActive(false);
         nextLevelButton.gameObject.SetActive(false);
 
@@ -62,13 +64,13 @@ public class EndGameMenu : UIPanel
     {
         GameManager.Instance.LoadLevel(DataManager.Instance.GetLevel());
 
-        MenuManager.Instance.SwitchPanel<StartMenu>();
+        MenuManager.Instance.CloseAllPanels();
     }
 
     public void OnRetryButtonPressed()
     {
         GameManager.Instance.LoadLevel(DataManager.Instance.GetLevel());
 
-        MenuManager.Instance.SwitchPanel<StartMenu>();
+        MenuManager.Instance.CloseAllPanels();
     }
 }

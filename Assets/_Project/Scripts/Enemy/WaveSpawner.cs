@@ -25,12 +25,21 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         countdown = timeBetweenWaves;
-        DOVirtual.DelayedCall(timeBetweenWaves,()=> StartWave());
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.isGameOver)
+        {
+            return;
+        }
+
+        if (!GameManager.Instance.isGameStarted)
+        {
+            return;
+        }
+
         if (!isSpawning)
         {
             if (countdown > 0f)
@@ -60,16 +69,23 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnEnable()
     {
-        BusSystem.OnEnemyDestroyed += OnEnemyDestroyed;        
+        BusSystem.OnEnemyDestroyed += OnEnemyDestroyed;
+        BusSystem.OnStartGame += OnStartGame;
     }
 
     private void OnDisable()
     {
-        BusSystem.OnEnemyDestroyed += OnEnemyDestroyed;
+        BusSystem.OnEnemyDestroyed -= OnEnemyDestroyed;
+        BusSystem.OnStartGame -= OnStartGame;
     }
     private void OnEnemyDestroyed()
     {
         enemiesAlive--;
+    }
+
+    private void OnStartGame()
+    {
+        DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
     }
 
     private void StartWave()

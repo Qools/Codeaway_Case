@@ -24,6 +24,16 @@ public class Node : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        if (GameManager.Instance.isGameOver)
+        {
+            return;
+        }
+
+        if (!GameManager.Instance.isGameStarted)
+        {
+            return;
+        }
+
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -52,6 +62,16 @@ public class Node : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameManager.Instance.isGameOver)
+        {
+            return;
+        }
+
+        if (!GameManager.Instance.isGameStarted)
+        {
+            return;
+        }
+
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;

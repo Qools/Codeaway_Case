@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameController : Singleton<GameController>
 {
-    private bool isGameEnded = false;
+    [SerializeField] private float startLevelDelay;
 
     public void Init()
     { 
@@ -16,21 +16,23 @@ public class GameController : Singleton<GameController>
     private void OnEnable()
     {
         BusSystem.OnLivesReduced += OnLivesReduced;
+        BusSystem.OnNewLevelLoad += OnNewLevelLoad;
     }
 
     private void OnDisable()
     {
         BusSystem.OnLivesReduced -= OnLivesReduced;
+        BusSystem.OnNewLevelLoad -= OnNewLevelLoad;
     }
 
     private void OnNewLevelLoad()
     {
-        
+        DOVirtual.DelayedCall(startLevelDelay, () => BusSystem.CallStartGame());
     }
 
     private void OnLivesReduced(int _lives)
     {
-        if (isGameEnded)
+        if (GameManager.Instance.isGameOver)
         {
             return;
         }
@@ -38,7 +40,7 @@ public class GameController : Singleton<GameController>
         if (_lives <= 0)
         {
             Debug.Log("Game Over");
-            isGameEnded = true;
+            BusSystem.CallGameOver(GameResult.Lose);
         }
     }
 }
