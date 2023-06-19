@@ -5,7 +5,7 @@ using TMPro;
 
 public class Shop : MonoBehaviour
 {
-    public List<TurretAttributes> turretAttributes = new List<TurretAttributes>();
+    public List<TurretBlueprint> turretAttributes = new List<TurretBlueprint>();
     [SerializeField] private List<TextMeshProUGUI> priceTexts = new List<TextMeshProUGUI>();
 
     private void Start()

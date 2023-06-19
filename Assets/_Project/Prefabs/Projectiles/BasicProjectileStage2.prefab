@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5568353437638968747}
   - component: {fileID: 3937674322648092015}
   m_Layer: 0
-  m_Name: ArrowProjectile
+  m_Name: BasicProjectileStage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 2006147009
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2101510376, guid: 08389435312784b428e79a20057bb0ab, type: 3}
+  m_Sprite: {fileID: 1045024123, guid: 08389435312784b428e79a20057bb0ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,4 +97,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db27c168223254c418a343645dde5ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileAttributes: {fileID: 11400000, guid: b3c6ead95bba1a042b26658d2bf262f3, type: 2}
+  projectileAttributes: {fileID: 11400000, guid: edcc6eebbb850de4c8ea4bc5d3a9f6cc, type: 2}

@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class BuildManager : MonoBehaviour
 {
-    private TurretAttributes turretToBuild;
+    private TurretBlueprint turretToBuild;
+    private Node selectedNode;
 
-    public TurretAttributes standardTurretPrefab;
+    [SerializeField] private NodeUI nodeUI;
+
+    public TurretBlueprint standardTurretPrefab;
 
     public static BuildManager Instance;
 
@@ -35,21 +38,35 @@ public class BuildManager : MonoBehaviour
         get { return PlayerStats.Money >= turretToBuild.price; }
     }
 
-    public void BuildTurretOn(Node node)
+    public void SelectNode(Node node)
     {
-        if (PlayerStats.Money < turretToBuild.price)
+        if (selectedNode == node)
         {
+            DeselectNode();
             return;
         }
 
-        PlayerStats.Money -= turretToBuild.price;
+        selectedNode = node;
+        turretToBuild = null;
 
-        GameObject turret = Instantiate(turretToBuild.turretPrefab, node.GetOffsetPosition(), Quaternion.identity);
-        node.turret = turret;
+        nodeUI.SetTarget(selectedNode);
     }
 
-    public void SetTurretToBuild(TurretAttributes _turret)
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.HideUI();
+    }
+
+    public void SetTurretToBuild(TurretBlueprint _turret)
     {
         turretToBuild = _turret;
+
+        DeselectNode();
+    }
+
+    public TurretBlueprint GetTurretToBuild()
+    {
+        return turretToBuild;
     }
 }
