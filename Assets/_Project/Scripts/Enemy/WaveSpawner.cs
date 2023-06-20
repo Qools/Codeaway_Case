@@ -89,14 +89,15 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnStartGame()
     {
-        //DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
-
-        StartCoroutine(StartWave());
+        DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
     }
 
-    private IEnumerator StartWave()
+    private void StartWave()
     {
-        yield return new WaitForSeconds(timeBetweenWaves);
+        if (waveIndex >= waves.Length)
+        {
+            return;
+        }
 
         isSpawning = true;
         //enemiesLeftToSpawn = EnemiesPerWave();
@@ -113,9 +114,7 @@ public class WaveSpawner : MonoBehaviour
 
         PlayerStats.Rounds++;
 
-        //DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
-        StartCoroutine(StartWave());
-
+        DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
     }
 
     private void SpawnEnemy()

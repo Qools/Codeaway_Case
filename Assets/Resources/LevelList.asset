@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LevelList
   m_EditorClassIdentifier: 
   all:
-  - TestScene
+  - Level1

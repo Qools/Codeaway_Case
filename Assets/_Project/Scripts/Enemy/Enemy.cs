@@ -66,6 +66,8 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        PlayerStats.KilledEnemy++;
+
         BusSystem.CallEnemyDestroyed();
     }
 }
