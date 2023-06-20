@@ -5199,6 +5199,38 @@ PrefabInstance:
       propertyPath: turretAttributes.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 67bf2e884057efb49a607719d1913580, type: 2}
+    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
 --- !u!224 &786139944 stripped

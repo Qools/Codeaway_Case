@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b425084963e2f594e80a8a90acdbb678, type: 3}
-  m_Name: BasicArrowStage2
+  m_Name: ThoughArrowStage2
   m_EditorClassIdentifier: 
   particleEffect: {fileID: 5721332022407194390, guid: 8148b78987513ab49ba1f9b278ae26a4, type: 3}
-  damage: 50
+  damage: 100
   speed: 15
-  explosionRadius: 0
+  explosionRadius: 3
   projectileRotationSpeed: 120

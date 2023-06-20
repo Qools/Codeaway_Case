@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b425084963e2f594e80a8a90acdbb678, type: 3}
-  m_Name: BasicArrowStage2
+  m_Script: {fileID: 11500000, guid: f10961c09c7c0034dbbae2bb08c0b761, type: 3}
+  m_Name: FastTurretStage1
   m_EditorClassIdentifier: 
-  particleEffect: {fileID: 5721332022407194390, guid: 8148b78987513ab49ba1f9b278ae26a4, type: 3}
-  damage: 50
-  speed: 15
-  explosionRadius: 0
-  projectileRotationSpeed: 120
+  projectile: {fileID: 1063341159384450828, guid: 8333d3829c871a94ea2650cd5336de1c, type: 3}
+  range: 5
+  turretRotationSpeed: 120
+  fireRate: 5
