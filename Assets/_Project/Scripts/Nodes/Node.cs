@@ -117,7 +117,7 @@ public class Node : MonoBehaviour
         turret = newTurret;
 
         GameObject upgradeEffect = Instantiate(turretBlueprint.upgradeEffect, transform.position, Quaternion.identity);
-        Destroy(upgradeEffect, 2f);
+        Destroy(upgradeEffect, 1f);
 
         isUpgraded = true;
     }

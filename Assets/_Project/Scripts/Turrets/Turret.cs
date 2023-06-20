@@ -103,10 +103,11 @@ public class Turret : MonoBehaviour
             targetRotation, 
             turretAttributes.turretRotationSpeed * Time.deltaTime);
     }
-
+#if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, Vector3.forward, turretAttributes.range);
     }
+#endif
 }
