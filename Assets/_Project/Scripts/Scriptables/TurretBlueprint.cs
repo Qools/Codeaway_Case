@@ -8,6 +8,10 @@ public class TurretBlueprint : ScriptableObject
     public GameObject turretPrefab;
     public GameObject upgradeTurretPrefab;
 
+    public GameObject buildEffect;
+    public GameObject upgradeEffect;
+    public GameObject sellEffect;
+
     public Sprite turretIcon;
     public Sprite upgradeTurretIcon;
 

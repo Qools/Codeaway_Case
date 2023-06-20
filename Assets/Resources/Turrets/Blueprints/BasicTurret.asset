@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turretPrefab: {fileID: 3660710843006356496, guid: 3bfd0b32d6e442742a04495ccfa5dc2e, type: 3}
   upgradeTurretPrefab: {fileID: 2198609096257118295, guid: 14f1422e25720f743afff77b1ef43e74, type: 3}
+  buildEffect: {fileID: 6887331363672756991, guid: 1c212e64f1a36b84897a9d832439818b, type: 3}
+  upgradeEffect: {fileID: 8067509285381968798, guid: cc2306d9f23dc0640a4d2469c5a860b3, type: 3}
+  sellEffect: {fileID: 5369566070494974107, guid: 532cb5b9f5ecf4841a4d0f9a054d0a23, type: 3}
   turretIcon: {fileID: -50832698, guid: a9f635b4db8ad754e81cddb5fa5ef1e4, type: 3}
   upgradeTurretIcon: {fileID: 897740155, guid: a9f635b4db8ad754e81cddb5fa5ef1e4, type: 3}
   price: 100

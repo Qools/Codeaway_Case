@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EnemyAttributes", menuName = "ScriptableObjects/EnemyAttributes", order = 1)]
 public class EnemyAttributes : ScriptableObject
 {
+    public GameObject deadEffect;
+
     public int healthPoints;
     public float speed;
     public float minDistanceToWaypoint;

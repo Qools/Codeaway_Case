@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf25cfc91707a7542ba4df2ccb54b330, type: 3}
   m_Name: BasicEnemy
   m_EditorClassIdentifier: 
+  deadEffect: {fileID: 8344640096344696140, guid: 1e2cbf99d1f3fd343a663b2fba0a0cbe, type: 3}
   healthPoints: 100
   speed: 5
   minDistanceToWaypoint: 0.1

@@ -42,8 +42,17 @@ public class Enemy : MonoBehaviour
     {
         enemyAnimattor.OnEnemyDeath();
 
+        PlayDeathEffect();
+
         AddRewardMoney();
         Destroy(gameObject, 1f);
+    }
+
+    private void PlayDeathEffect()
+    {
+        GameObject vfx = Instantiate(enemyAttributes.deadEffect, transform.position, Quaternion.identity);
+
+        Destroy(vfx, 1f);
     }
 
     private void AddRewardMoney()

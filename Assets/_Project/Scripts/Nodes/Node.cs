@@ -96,6 +96,9 @@ public class Node : MonoBehaviour
         GameObject newTurret = Instantiate(_turretBlueprint.turretPrefab, GetOffsetPosition(), Quaternion.identity);
         turret = newTurret;
 
+        GameObject buildEffect = Instantiate(_turretBlueprint.buildEffect, transform.position, Quaternion.identity);
+        Destroy(buildEffect, 2f);
+
         turretBlueprint = _turretBlueprint;
     }
 
@@ -113,6 +116,9 @@ public class Node : MonoBehaviour
         GameObject newTurret = Instantiate(turretBlueprint.upgradeTurretPrefab, GetOffsetPosition(), Quaternion.identity);
         turret = newTurret;
 
+        GameObject upgradeEffect = Instantiate(turretBlueprint.upgradeEffect, transform.position, Quaternion.identity);
+        Destroy(upgradeEffect, 2f);
+
         isUpgraded = true;
     }
 
@@ -120,8 +126,12 @@ public class Node : MonoBehaviour
     {
         PlayerStats.Money += turretBlueprint.GetSellAmount();
 
+        GameObject sellEffect = Instantiate(turretBlueprint.sellEffect, transform.position, Quaternion.identity);
+        Destroy(sellEffect, 2f);
+
         Destroy(turret);
         turretBlueprint = null;
+
     }
 
     public Vector3 GetOffsetPosition()

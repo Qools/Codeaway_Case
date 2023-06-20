@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b425084963e2f594e80a8a90acdbb678, type: 3}
   m_Name: ThoughArrowStage1
   m_EditorClassIdentifier: 
-  particleEffect: {fileID: 5721332022407194390, guid: 8148b78987513ab49ba1f9b278ae26a4, type: 3}
+  particleEffect: {fileID: 6110620292061790634, guid: 9646a1e50660ede43a08b296d15e61f5, type: 3}
   damage: 75
   speed: 10
   explosionRadius: 2
