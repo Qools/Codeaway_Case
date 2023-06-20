@@ -12,11 +12,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Image healthBar;
 
     private int enemyHealthPoints;
+    private float _healthPoints;
 
     public bool isDying = false;
     private void Start()
     {
         enemyHealthPoints = enemyAttributes.healthPoints;
+        _healthPoints = enemyAttributes.healthPoints;
     }
 
     public void TakeDamage(int _damage)
@@ -27,8 +29,9 @@ public class Enemy : MonoBehaviour
         }
 
         enemyHealthPoints -= _damage;
+        _healthPoints -= _damage;
 
-        healthBar.DOFillAmount(enemyHealthPoints / enemyAttributes.healthPoints, 0.5f);
+        healthBar.DOFillAmount(_healthPoints / enemyAttributes.healthPoints, 0.5f);
 
         if (enemyHealthPoints <= 0)
         {
