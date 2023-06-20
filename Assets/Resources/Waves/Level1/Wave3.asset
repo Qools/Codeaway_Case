@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Wave3
   m_EditorClassIdentifier: 
   enemy: {fileID: 6409892728922342222, guid: 73d7b2b500463834dac9dcf77a4c5076, type: 3}
-  count: 3
-  rate: 4
+  count: 5
+  rate: 1

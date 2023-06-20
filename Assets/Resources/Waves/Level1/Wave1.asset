@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6c0f011667086c4e93a424f0d8f020c, type: 3}
-  m_Name: LevelList
+  m_Script: {fileID: 11500000, guid: 8e483516556404d4e85100b8b01931eb, type: 3}
+  m_Name: Wave1
   m_EditorClassIdentifier: 
-  all:
-  - Level1
-  - Level2
+  enemy: {fileID: 6409892728922342222, guid: cdac52d2fd8ee20459f9b5905e56c2bd, type: 3}
+  count: 5
+  rate: 2
