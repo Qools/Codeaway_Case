@@ -28,6 +28,11 @@ public class Turret : MonoBehaviour
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
+            if (enemy.GetComponent<Enemy>().isDying)
+            {
+                continue;
+            }
+
             if (distanceToEnemy < shortesDistance)
             {
                 shortesDistance = distanceToEnemy;

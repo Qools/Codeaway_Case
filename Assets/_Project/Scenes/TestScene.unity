@@ -11521,11 +11521,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bac1269fac676478031cad9a62917b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 6409892728922342222, guid: cdac52d2fd8ee20459f9b5905e56c2bd, type: 3}
+  waves:
+  - {fileID: 11400000, guid: 85cb0d140b6b04942af5623fdb731a0e, type: 2}
+  - {fileID: 11400000, guid: 5a6b19c988718ce459a594377fc50e5c, type: 2}
+  - {fileID: 11400000, guid: 3023597b0b4f5484b9bab3ce7be41da5, type: 2}
   spawnPoint: {fileID: 1673872750}
   baseEnemies: 8
-  enemiesPerSecond: 4
   timeBetweenWaves: 5
   difficultyScalingFactor: 0.75
 --- !u!4 &1646190285

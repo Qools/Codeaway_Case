@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public EnemyAttributes enemyAttributes;
+    [SerializeField] private Enemy enemy;
 
     private Transform target;
     private int waypointIndex = 0;
@@ -37,8 +37,13 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
+        if (enemy.isDying)
+        {
+            return;
+        }
+
         Vector3 direction = target.position - transform.position;
-        transform.Translate(direction.normalized * enemyAttributes.speed * Time.deltaTime, Space.World);
+        transform.Translate(direction.normalized * enemy.enemyAttributes.speed * Time.deltaTime, Space.World);
 
         if (CalculateDistanceToWayPoint())
         {
@@ -50,7 +55,7 @@ public class EnemyMovement : MonoBehaviour
     {
         bool isClose = false;
 
-        if (Vector3.Distance(transform.position, target.position) < enemyAttributes.minDistanceToWaypoint)
+        if (Vector3.Distance(transform.position, target.position) < enemy.enemyAttributes.minDistanceToWaypoint)
         {
             isClose = true;
         }

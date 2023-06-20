@@ -5,18 +5,17 @@ using DG.Tweening;
 
 public class WaveSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private Wave[] waves;
 
     public Transform spawnPoint;
 
     [SerializeField] private int baseEnemies = 8;
-    [SerializeField] private float enemiesPerSecond = 0.5f;
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
 
     public static float countdown;
     
-    private int waveIndex = 1;
+    private int waveIndex = 0;
     private float timeSinceLastSpawn;
     private int enemiesAlive;
     private int enemiesLeftToSpawn;
@@ -40,6 +39,11 @@ public class WaveSpawner : MonoBehaviour
             return;
         }
 
+        if (waveIndex == waves.Length)
+        {
+            BusSystem.CallGameOver(GameResult.Win);
+        }
+
         if (!isSpawning)
         {
             if (countdown > 0f)
@@ -53,7 +57,7 @@ public class WaveSpawner : MonoBehaviour
 
         timeSinceLastSpawn += Time.deltaTime;
 
-        if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0)
+        if (timeSinceLastSpawn >= (1f / waves[waveIndex].rate) && enemiesLeftToSpawn > 0)
         {
             SpawnEnemy();
             enemiesLeftToSpawn--;
@@ -85,13 +89,18 @@ public class WaveSpawner : MonoBehaviour
 
     private void OnStartGame()
     {
-        DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
+        //DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
+
+        StartCoroutine(StartWave());
     }
 
-    private void StartWave()
+    private IEnumerator StartWave()
     {
+        yield return new WaitForSeconds(timeBetweenWaves);
+
         isSpawning = true;
-        enemiesLeftToSpawn = EnemiesPerWave();
+        //enemiesLeftToSpawn = EnemiesPerWave();
+        enemiesLeftToSpawn = waves[waveIndex].count;
 
         countdown = timeBetweenWaves;
     }
@@ -104,12 +113,14 @@ public class WaveSpawner : MonoBehaviour
 
         PlayerStats.Rounds++;
 
-        DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
+        //DOVirtual.DelayedCall(timeBetweenWaves, () => StartWave());
+        StartCoroutine(StartWave());
+
     }
 
     private void SpawnEnemy()
     {
-        GameObject enemyToSpawn = enemyPrefabs[0];
+        GameObject enemyToSpawn = waves[waveIndex].enemy;
         Instantiate(enemyToSpawn, spawnPoint.position, Quaternion.identity);
     }
 

@@ -6,12 +6,14 @@ using DG.Tweening;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private EnemyAnimationController enemyAnimattor;
+
     public EnemyAttributes enemyAttributes;
     [SerializeField] private Image healthBar;
 
     private int enemyHealthPoints;
 
-    private bool isDying = false;
+    public bool isDying = false;
     private void Start()
     {
         enemyHealthPoints = enemyAttributes.healthPoints;
@@ -38,8 +40,10 @@ public class Enemy : MonoBehaviour
 
     public void EnemyDeath()
     {
+        enemyAnimattor.OnEnemyDeath();
+
         AddRewardMoney();
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 
     private void AddRewardMoney()
