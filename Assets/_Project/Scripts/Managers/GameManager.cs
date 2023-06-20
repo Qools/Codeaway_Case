@@ -89,7 +89,11 @@ public class GameManager : Singleton<GameManager>
     {
         currentLevel = levelList.LoopLevelsByIndex(_level);
 
+        MenuManager.Instance.loadingScreen.SetActive(true);
+
         SceneManager.LoadScene(currentLevel);
+
+        MenuManager.Instance.loadingScreen.SetActive(false);
 
         MenuManager.Instance.CloseAllPanels();
 

@@ -2565,6 +2565,7 @@ Transform:
   - {fileID: 1149519680}
   - {fileID: 1025215826}
   - {fileID: 1350432599}
+  - {fileID: 117070892}
   - {fileID: 762923396}
   - {fileID: 289213303}
   - {fileID: 1318347764}
@@ -2573,12 +2574,11 @@ Transform:
   - {fileID: 457742273}
   - {fileID: 1334284576}
   - {fileID: 1112771535}
-  - {fileID: 1781684021}
-  - {fileID: 117070892}
-  - {fileID: 1301063861}
   - {fileID: 916150256}
-  - {fileID: 662853971}
+  - {fileID: 1781684021}
   - {fileID: 68116315}
+  - {fileID: 1301063861}
+  - {fileID: 662853971}
   - {fileID: 2080439710}
   - {fileID: 1658743520}
   - {fileID: 1746848707}
@@ -5047,58 +5047,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2109905927501224122, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2109905927501224122, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2109905927501224122, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2109905927501224122, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4758338010970515783, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: turretAttributes.Array.data[0]
+      propertyPath: infoPanelCanvasGroup
       value: 
-      objectReference: {fileID: 11400000, guid: 67bf2e884057efb49a607719d1913580, type: 2}
-    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6865829637995938316, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2025112877}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
 --- !u!224 &786139944 stripped
@@ -13856,6 +13808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2025112875}
   - component: {fileID: 2025112876}
+  - component: {fileID: 2025112877}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -13894,6 +13847,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025112874}
   m_CullTransparentMesh: 1
+--- !u!225 &2025112877
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025112874}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2038268004
 PrefabInstance:
   m_ObjectHideFlags: 0

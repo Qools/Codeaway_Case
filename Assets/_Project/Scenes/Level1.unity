@@ -5196,9 +5196,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4758338010970515783, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
-      propertyPath: turretAttributes.Array.data[0]
+      propertyPath: infoPanelCanvasGroup
       value: 
-      objectReference: {fileID: 11400000, guid: 67bf2e884057efb49a607719d1913580, type: 2}
+      objectReference: {fileID: 2025112877}
     - target: {fileID: 6572071134593037417, guid: 3b61cf410b3390f4bb0e775c5b56139b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -14236,6 +14236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2025112875}
   - component: {fileID: 2025112876}
+  - component: {fileID: 2025112877}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -14274,6 +14275,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2025112874}
   m_CullTransparentMesh: 1
+--- !u!225 &2025112877
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025112874}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &2038268004
 PrefabInstance:
   m_ObjectHideFlags: 0

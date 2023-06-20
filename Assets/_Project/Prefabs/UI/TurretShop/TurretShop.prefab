@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2109905927048500424}
   - component: {fileID: 2109905927048500426}
   - component: {fileID: 4758338010970515783}
+  - component: {fileID: 5162141542672116116}
   m_Layer: 5
   m_Name: TurretShop
   m_TagString: Untagged
@@ -131,6 +132,20 @@ MonoBehaviour:
   - {fileID: 2109905927501224127}
   - {fileID: 6865829637995938313}
   - {fileID: 6572071134593037420}
+  shopCanvasGroup: {fileID: 5162141542672116116}
+  infoPanelCanvasGroup: {fileID: 0}
+--- !u!225 &5162141542672116116
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109905927048500422}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1875755706707432710
 PrefabInstance:
   m_ObjectHideFlags: 0
